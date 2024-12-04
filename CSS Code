@@ -1,0 +1,907 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+    background-color: #f4f4f4;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.5em;
+    color: #333;
+}
+
+nav a {
+    margin: 0 1em;
+    color: #555;
+    text-decoration: none;
+}
+
+.download-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 0.5em 1em;
+    border: none;
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 4em 1em;
+    background-color: #f9f9f9;
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    color: #333;
+}
+
+.app-links button {
+    background-color: #007bff;
+    color: white;
+    padding: 0.8em 1.5em;
+    margin: 0.5em;
+    border: none;
+    cursor: pointer;
+}
+
+/* Features Section */
+#features {
+    padding: 2em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: #fff;
+}
+
+.feature-box {
+    width: 45%;
+    margin: 1em;
+    padding: 1em;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* How It Works Section */
+#how-it-works {
+    padding: 2em;
+    background-color: #e9f5ff;
+}
+
+.step {
+    margin-bottom: 1.5em;
+    text-align: center;
+}
+
+/* Calculator Section */
+#calculator {
+    padding: 2em;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.calculator input {
+    padding: 0.5em;
+    margin: 0.5em;
+    width: 100px;
+}
+
+.calculator button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 0.5em 1em;
+    border: none;
+    cursor: pointer;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1em;
+    background-color: #333;
+    color: white;
+    font-size: 0.9em;
+}
+/* Budget Calculator Section */
+#budget-calculator {
+    padding: 2em;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.budget-calculator input {
+    padding: 0.5em;
+    margin: 0.5em;
+    width: 150px;
+}
+
+.budget-calculator button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 0.5em 1em;
+    border: none;
+    cursor: pointer;
+}
+
+#budget-result {
+    font-weight: bold;
+    margin-top: 1em;
+    color: #333;
+}
+
+/* Categories Section */
+#categories {
+    padding: 2em;
+    background-color: #e9f5ff;
+    text-align: center;
+}
+
+.categories-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1em;
+}
+
+.category {
+    padding: 0.8em;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 120px;
+    color: #555;
+}
+#calculator {
+    padding: 2em;
+    background-color: #f9f9f9;
+    text-align: center;
+    margin-top: 2em;
+}
+
+.calculator-container {
+    display: inline-block;
+    border: 1px solid #ddd;
+    padding: 1em;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+#calc-display {
+    width: 100%;
+    padding: 0.8em;
+    font-size: 1.5em;
+    text-align: right;
+    border: 1px solid #ccc;
+    margin-bottom: 1em;
+    border-radius: 5px;
+}
+
+.calc-buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5em;
+}
+
+.calc-button {
+    padding: 1em;
+    font-size: 1.2em;
+    background-color: #f1f1f1;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.calc-button:hover {
+    background-color: #ddd;
+}
+
+.calc-button:active {
+    background-color: #ccc;
+}
+.chart-container {
+    width: 80%;
+    margin: 2em auto;
+    text-align: center;
+}
+/* Responsive Calculator */
+@media (max-width: 600px) {
+    .calculator-container {
+        width: 100%;
+        padding: 1em;
+    }
+
+    #calc-display {
+        font-size: 1.2em;
+    }
+
+    .calc-button {
+        padding: 0.8em;
+        font-size: 1em;
+    }
+}
+/* Styling for Contact Button and Email Display */
+#contactButton {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 10px 15px;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+#emailDisplay {
+  display: none;
+  position: fixed;
+  top: 60px;
+  right: 20px;
+  padding: 10px;
+  background-color: #f1f1f1;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+/* Contact and Create Account Buttons */
+#contactButton, #createAccountButton {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 10px 15px;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-top: 40px;
+}
+
+#createAccountButton {
+  top: 60px; /* Positioned below the Contact button */
+}
+
+/* Email Display Box */
+#emailDisplay {
+  display: none;
+  position: fixed;
+  top: 60px;
+  right: 20px;
+  padding: 10px;
+  background-color: #f1f1f1;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Modal Form for Account Creation */
+#createAccountModal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+#accountForm {
+  background-color: white;
+  padding: 20px;
+  width: 300px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+#nextButton {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#closeModal {
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #d9534f;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+/* Ex Track Text and Logo */
+#exTrackContainer {
+  text-align: center;
+  margin-top: 20px;
+  position: relative;
+}
+
+#exTrackText {
+  font-size: 48px;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+  display: inline-block;
+}
+
+#logo {
+  display: block;
+  margin: 0 auto;
+  margin-top: 10px;
+  width: 80px; /* Adjust size as needed */
+}
+/* Color Palette */
+:root {
+  --deep-red: #780116;
+  --gold: #f7b538;
+  --orange: #db7c26;
+  --bright-red: #d8572a;
+  --dark-red: #c32f27;
+  --background: #f7f5f2; /* Light background for elegance */
+}
+
+/* General Body Styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--background);
+  color: var(--deep-red);
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+/* Header Styling */
+header {
+  background-color: var(--deep-red);
+  color: white;
+  padding: 20px 0;
+  font-size: 24px;
+}
+
+/* Main Content Styling */
+main {
+  padding: 20px;
+}
+
+/* Headings */
+h1, h2, h3 {
+  color: var(--bright-red);
+  margin-bottom: 10px;
+}
+
+/* Buttons */
+button {
+  background-color: var(--orange);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: var(--dark-red);
+}
+
+/* Contact and Create Account Button Styles */
+#contactButton, #createAccountButton {
+  background-color: var(--deep-red);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  z-index: 1000;
+}
+
+#createAccountButton {
+  top: 60px;
+}
+
+#emailDisplay {
+  display: none;
+  padding: 10px;
+  background-color: var(--gold);
+  color: var(--deep-red);
+  border: 1px solid var(--deep-red);
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Form Modal */
+#createAccountModal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  color: var(--deep-red);
+}
+
+#accountForm {
+  background-color: white;
+  padding: 20px;
+  width: 300px;
+  border-radius: 10px;
+}
+
+#nextButton {
+  background-color: var(--gold);
+  color: var(--deep-red);
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+#nextButton:hover {
+  background-color: var(--orange);
+}
+
+#closeModal {
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: var(--bright-red);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* Footer */
+footer {
+  background-color: var(--deep-red);
+  color: white;
+  padding: 10px;
+  font-size: 14px;
+}
+/* Color Palette */
+:root {
+  --teal: #177e89;
+  --dark-blue: #084c61;
+  --red: #db3a34;
+  --yellow: #ffc857;
+  --dark-gray: #323031;
+  --background: #f8f8f8; /* Light background for elegance */
+}
+
+/* General Body Styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--background);
+  color: var(--dark-gray);
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+/* Header Styling */
+header {
+  background-color: var(--dark-blue);
+  color: white;
+  padding: 20px 0;
+  font-size: 24px;
+}
+
+/* Main Content Styling */
+main {
+  padding: 20px;
+}
+
+/* Headings */
+h1, h2, h3 {
+  color: var(--teal);
+  margin-bottom: 10px;
+}
+
+/* Buttons */
+button {
+  background-color: var(--yellow);
+  color: var(--dark-gray);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: var(--red);
+  color: white;
+}
+
+/* Contact and Create Account Button Styles */
+#contactButton, #createAccountButton {
+  background-color: var(--teal);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  z-index: 1000;
+}
+
+#createAccountButton {
+  top: 60px;
+}
+
+#emailDisplay {
+  display: none;
+  padding: 10px;
+  background-color: var(--yellow);
+  color: var(--dark-blue);
+  border: 1px solid var(--dark-blue);
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Form Modal */
+#createAccountModal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  color: var(--dark-gray);
+}
+
+#accountForm {
+  background-color: white;
+  padding: 20px;
+  width: 300px;
+  border-radius: 10px;
+}
+
+#nextButton {
+  background-color: var(--yellow);
+  color: var(--dark-gray);
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+#nextButton:hover {
+  background-color: var(--teal);
+  color: white;
+}
+
+#closeModal {
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: var(--red);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* Footer */
+footer {
+  background-color: var(--dark-blue);
+  color: white;
+  padding: 10px;
+  font-size: 14px;
+}
+/* Updated Color Palette */
+:root {
+  --dark-green: #283618;     /* Background or main dark sections */
+  --olive-green: #606c38;    /* Secondary sections or accents */
+  --light-cream: #fefae0;    /* Background for main content or cards */
+  --warm-yellow: #dda15e;    /* Buttons or highlights */
+  --brown: #bc6c25;          /* Headers or accent borders */
+}
+
+/* Example Usage */
+body {
+  background-color: var(--light-cream);
+  color: var(--dark-green);
+}
+
+header, footer {
+  background-color: var(--dark-green);
+  color: var(--light-cream);
+}
+
+button {
+  background-color: var(--warm-yellow);
+  color: var(--dark-green);
+  border: 2px solid var(--brown);
+}
+
+h1, h2, h3 {
+  color: var(--brown);
+}
+
+.card {
+  background-color: var(--light-cream);
+  border: 1px solid var(--olive-green);
+}
+
+.navbar {
+  background-color: var(--olive-green);
+  color: var(--light-cream);
+}
+/* Updated Color Palette */
+:root {
+  --deep-red: #6f1d1b;       /* Main headers or strong accents */
+  --warm-brown: #432818;     /* Background or dark sections */
+  --soft-brown: #bb9457;     /* Secondary sections or lighter accents */
+  --rusty-orange: #99582a;   /* Buttons, highlights, or links */
+  --light-yellow: #ffe6a7;   /* Main background or card content */
+}
+
+/* Example Usage */
+body {
+  background-color: var(--light-yellow);
+  color: var(--warm-brown);
+}
+
+header, footer {
+  background-color: var(--warm-brown);
+  color: var(--light-yellow);
+}
+
+button {
+  background-color: var(--rusty-orange);
+  color: var(--light-yellow);
+  border: 2px solid var(--deep-red);
+}
+
+h1, h2, h3 {
+  color: var(--deep-red);
+}
+
+.card {
+  background-color: var(--light-yellow);
+  border: 1px solid var(--soft-brown);
+  color: var(--warm-brown);
+}
+
+.navbar {
+  background-color: var(--soft-brown);
+  color: var(--light-yellow);
+}
+
+a {
+  color: var(--rusty-orange);
+}
+
+p, li, span {
+  color: var(--warm-brown);
+}
+/* Calculator Styling */
+.calculator {
+  background-color: var(--light-yellow); /* or another contrasting color from your palette */
+}
+
+.calculator-display {
+  color: #000000; /* Black for high contrast */
+  background-color: var(--light-yellow); /* Ensures contrast with the numbers */
+  font-size: 2em;
+  padding: 10px;
+  text-align: right;
+}
+
+.calculator-button {
+  color: #000000; /* Black for numbers and operators */
+  background-color: var(--soft-brown); /* Background for buttons */
+  border: 1px solid var(--warm-brown);
+  font-size: 1.5em;
+}
+
+.calculator-button:active {
+  background-color: var(--rusty-orange); /* Highlight effect when button is pressed */
+}
+/* Updated Color Palette */
+:root {
+  --dark-navy: #03071e;      /* Primary background for headers or main sections */
+  --deep-wine: #370617;      /* Secondary background, or accents */
+  --rich-burgundy: #6a040f;  /* Headers or strong accent borders */
+  --crimson: #9d0208;        /* Buttons, highlights, or links */
+  --bright-red: #d00000;     /* Call-to-action elements */
+  --rust-red: #dc2f02;       /* Button backgrounds or highlight elements */
+  --vibrant-orange: #e85d04; /* Secondary accents */
+  --bright-orange: #f48c06;  /* Light accents for readability */
+  --golden-yellow: #faa307;  /* Background for cards or info sections */
+  --soft-yellow: #ffba08;    /* Background or lighter text */
+}
+
+/* Example Usage */
+body {
+  background-color: var(--soft-yellow);
+  color: var(--dark-navy);
+}
+
+header, footer {
+  background-color: var(--dark-navy);
+  color: var(--soft-yellow);
+}
+
+button {
+  background-color: var(--crimson);
+  color: var(--soft-yellow);
+  border: 2px solid var(--bright-red);
+}
+
+h1, h2, h3 {
+  color: var(--rich-burgundy);
+}
+
+.card {
+  background-color: var(--golden-yellow);
+  border: 1px solid var(--rust-red);
+  color: var(--deep-wine);
+}
+
+.navbar {
+  background-color: var(--deep-wine);
+  color: var(--soft-yellow);
+}
+
+a {
+  color: var(--crimson);
+}
+
+p, li, span {
+  color: var(--dark-navy);
+}
+
+/* Calculator Styling */
+.calculator-display {
+  color: #000000;
+  background-color: var(--soft-yellow);
+  font-size: 2em;
+  padding: 10px;
+  text-align: right;
+}
+
+.calculator-button {
+  color: #000000;
+  background-color: var(--vibrant-orange);
+  border: 1px solid var(--bright-red);
+  font-size: 1.5em;
+}
+
+.calculator-button:active {
+  background-color: var(--bright-orange);
+}
+/* Updated Font Color */
+:root {
+  --light-cream: #fefefa;    /* Replacing black for text */
+  /* Other colors from your current palette */
+  --dark-navy: #03071e;
+  --deep-wine: #370617;
+  --rich-burgundy: #6a040f;
+  --crimson: #9d0208;
+  --bright-red: #d00000;
+  --rust-red: #dc2f02;
+  --vibrant-orange: #e85d04;
+  --bright-orange: #f48c06;
+  --golden-yellow: #faa307;
+  --soft-yellow: #ffba08;
+}
+
+/* General Text Color */
+body {
+  color: var(--dark-navy); /* Main text color */
+}
+
+header, footer {
+  color: var(--light-cream);
+}
+
+button {
+  color: var(--light-cream);
+}
+
+h1, h2, h3 {
+  color: var(--rich-burgundy);
+}
+
+.card {
+  color: var(--deep-wine);
+}
+
+.navbar {
+  color: var(--light-cream);
+}
+
+a {
+  color: var(--crimson);
+}
+
+p, li, span {
+  color: var(--dark-navy);
+}
+
+/* Calculator Styling */
+.calculator-display {
+  color: var(--light-cream); /* Light cream for visibility */
+  background-color: var(--soft-yellow);
+}
+
+.calculator-button {
+  color: var(--light-cream); /* Light cream for button text */
+  background-color: var(--vibrant-orange);
+  border: 1px solid var(--bright-red);
+}
+/* Calculator Styling */
+.calculator-display {
+  color: var(--light-cream); /* Light cream for display text */
+  background-color: var(--soft-yellow);
+  font-size: 2em;
+  padding: 10px;
+  text-align: right;
+}
+
+.calculator-button {
+  color: #000000; /* Black for button text */
+  background-color: var(--vibrant-orange); /* Button background */
+  border: 1px solid var(--bright-red);
+  font-size: 1.5em;
+}
+
+.calculator-button:active {
+  background-color: var(--bright-orange); /* Highlight when pressed */
+}
+footer {
+  background-color: #023047;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+  position: relative;
+}
+
+footer .contact-email {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 0.8rem;
+}
+
+footer .contact-email a {
+  color: #FFB703; /* Use any color you prefer */
+  text-decoration: none;
+}
+
+footer .contact-email a:hover {
+  text-decoration: underline;
+}
