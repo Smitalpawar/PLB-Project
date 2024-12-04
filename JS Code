@@ -1,0 +1,260 @@
+function calculate() {
+    let input1 = parseFloat(document.getElementById('input1').value) || 0;
+    let input2 = parseFloat(document.getElementById('input2').value) || 0;
+    let total = input1 + input2;
+    document.getElementById('result').innerText = "Total: $" + total.toFixed(2);
+}
+function calculateBudget() {
+    let income = parseFloat(document.getElementById('income').value) || 0;
+    let essentials = parseFloat(document.getElementById('essentials').value) || 0;
+    let remainingBudget = income - essentials;
+    document.getElementById('budget-result').innerText = "Remaining Budget: $" + remainingBudget.toFixed(2);
+}
+function calculate() {
+    const display = document.getElementById("calc-display");
+    const buttons = document.querySelectorAll(".calc-button");
+    let currentInput = "";
+    let operator = null;
+    let previousInput = "";
+
+    // Function to update display
+    function updateDisplay(value) {
+        display.value = value;
+    }
+
+    // Function to handle button clicks
+    buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+            const value = button.innerText;
+
+            if (value >= "0" && value <= "9") { // If it's a number
+                currentInput += value;
+                updateDisplay(currentInput);
+            } else if (value === "+" || value === "-" || value === "*" || value === "/") { // If it's an operator
+                previousInput = currentInput;
+                operator = value;
+                currentInput = "";
+            } else if (value === "=") { // Equals button
+                if (previousInput && currentInput && operator) {
+                    const result = calculateResult(parseFloat(previousInput), parseFloat(currentInput), operator);
+                    updateDisplay(result);
+                    previousInput = result;
+                    currentInput = "";
+                    operator = null;
+                }
+            } else if (value === "C") { // Clear button
+                currentInput = "";
+                previousInput = "";
+                operator = null;
+                updateDisplay("0");
+            }
+        });
+    });
+
+    // Function to calculate result based on operator
+    function calculateResult(num1, num2, operator) {
+        switch (operator) {
+            case "+":
+                return num1 + num2;
+            case "-":
+                return num1 - num2;
+            case "*":
+                return num1 * num2;
+            case "/":
+                return num2 !== 0 ? num1 / num2 : "Error"; // Handle division by zero
+            default:
+                return 0;
+        }
+    }
+}
+// Monthly Expenses Bar Chart
+const ctxBar = document.getElementById('expenseBarChart').getContext('2d');
+const expenseBarChart = new Chart(ctxBar, {
+    type: 'bar',
+    data: {
+        labels: ['Groceries', 'Rent', 'Utilities', 'Transport', 'Entertainment', 'Healthcare'],
+        datasets: [{
+            label: 'Expenses ($)',
+            data: [300, 1000, 150, 200, 100, 150], // Example values, replace with actual data
+            backgroundColor: [
+                '#4CAF50', '#FF6384', '#36A2EB', '#FFCE56', '#66BB6A', '#FFA726'
+            ]
+        }]
+    },
+    options: {
+        responsive: true,
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+
+// Budget Allocation Pie Chart
+const ctxPie = document.getElementById('budgetPieChart').getContext('2d');
+const budgetPieChart = new Chart(ctxPie, {
+    type: 'pie',
+    data: {
+        labels: ['Essentials', 'Savings', 'Entertainment', 'Others'],
+        datasets: [{
+            label: 'Budget Allocation (%)',
+            data: [50, 20, 10, 20], // Example values, replace with actual data
+            backgroundColor: [
+                '#FF6384', '#36A2EB', '#FFCE56', '#4CAF50'
+            ]
+        }]
+    },
+    options: {
+        responsive: true
+    }
+});
+function updateExpenseChart(newData) {
+    expenseBarChart.data.datasets[0].data = newData;
+    expenseBarChart.update();
+}
+
+// Call this function with actual data from your website inputs
+updateExpenseChart([250, 1200, 200, 150, 120, 200]); // Example updated data
+document.addEventListener("DOMContentLoaded", function () {
+    const display = document.getElementById("calc-display");
+    const buttons = document.querySelectorAll(".calc-button");
+    let currentInput = "";
+    let operator = null;
+    let previousInput = "";
+
+    // Function to update display
+    function updateDisplay(value) {
+        display.value = value;
+    }
+
+    // Event listener for all calculator buttons
+    buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+            const value = button.innerText;
+
+            if (value >= "0" && value <= "9") { // If it's a number
+                currentInput += value;
+                updateDisplay(currentInput);
+            } else if (value === "+" || value === "-" || value === "*" || value === "/") { // If it's an operator
+                if (currentInput) {
+                    previousInput = currentInput;
+                    operator = value;
+                    currentInput = "";
+                }
+            } else if (value === "=") { // Equals button
+                if (previousInput && currentInput && operator) {
+                    const result = calculateResult(parseFloat(previousInput), parseFloat(currentInput), operator);
+                    updateDisplay(result);
+                    previousInput = result;
+                    currentInput = "";
+                    operator = null;
+                }
+            } else if (value === "C") { // Clear button
+                currentInput = "";
+                previousInput = "";
+                operator = null;
+                updateDisplay("0");
+            }
+        });
+    });
+
+    // Function to perform calculation based on operator
+    function calculateResult(num1, num2, operator) {
+        switch (operator) {
+            case "+":
+                return num1 + num2;
+            case "-":
+                return num1 - num2;
+            case "*":
+                return num1 * num2;
+            case "/":
+                return num2 !== 0 ? num1 / num2 : "Error"; // Handle division by zero
+            default:
+                return 0;
+        }
+    }
+});
+function showEmail() {
+  const emailDisplay = document.getElementById("emailDisplay");
+  if (emailDisplay.style.display === "none" || emailDisplay.style.display === "") {
+    emailDisplay.style.display = "block";
+  } else {
+    emailDisplay.style.display = "none";
+  }
+}
+// Show Email Display
+function showEmail() {
+  const emailDisplay = document.getElementById("emailDisplay");
+  emailDisplay.style.display = emailDisplay.style.display === "none" ? "block" : "none";
+}
+
+// Show Create Account Modal
+function showCreateAccount() {
+  document.getElementById("createAccountModal").style.display = "flex";
+  startAccountCreation();
+}
+
+// Close Modal
+function closeModal() {
+  document.getElementById("createAccountModal").style.display = "none";
+}
+
+// Steps for the form
+const steps = [
+  { label: "Full Name", type: "text", id: "fullName" },
+  { label: "Phone Number", type: "tel", id: "phoneNumber" },
+  { label: "Email", type: "email", id: "email" },
+  { label: "Profession", type: "text", id: "profession" },
+  { label: "Income", type: "number", id: "income" },
+  { label: "Do you want to add your bank account?", type: "text", id: "addBank", options: ["Yes", "No"] }
+];
+
+const bankDetailsStep = { label: "Bank Details", type: "text", id: "bankDetails" };
+
+let currentStep = 0;
+let formData = {};
+
+// Start form process
+function startAccountCreation() {
+  currentStep = 0;
+  formData = {};
+  showStep();
+}
+
+// Show current step
+function showStep() {
+  const stepContent = document.getElementById("stepContent");
+  stepContent.innerHTML = `<label>${steps[currentStep].label}</label><br>`;
+  
+  if (steps[currentStep].options) {
+    steps[currentStep].options.forEach(option => {
+      stepContent.innerHTML += `<input type="radio" name="${steps[currentStep].id}" value="${option}">${option}<br>`;
+    });
+  } else {
+    stepContent.innerHTML += `<input type="${steps[currentStep].type}" id="${steps[currentStep].id}" required>`;
+  }
+}
+
+// Next button functionality
+function nextStep() {
+  const input = document.querySelector("#stepContent input, #stepContent input:checked");
+  if (!input) return alert("Please fill in this step!");
+
+  formData[steps[currentStep].id] = input.type === "radio" ? input.value : input.value.trim();
+
+  // If "Yes" to adding bank details, add the bank detail step
+  if (currentStep === steps.length - 1 && formData.addBank === "Yes") {
+    steps.push(bankDetailsStep);
+  }
+
+  // Move to the next step or complete form
+  currentStep++;
+  if (currentStep < steps.length) {
+    showStep();
+  } else {
+    alert("Account created successfully!");
+    console.log("User data:", formData); // You can process or store data here
+    closeModal();
+  }
+}
