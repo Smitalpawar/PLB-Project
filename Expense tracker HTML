@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex Track - Expense Tracker</title>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">Ex Track</div>
+        <nav>
+            <a href="#features">Features</a>
+            <a href="#how-it-works">How It Works</a>
+            <a href="#calculator">Calculator</a>
+            <a href="#contact">Contact Us</a>
+            <button class="download-btn">Download App</button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Track, Save, and Grow Your Finances</h1>
+        <p>Ex Track helps you manage expenses, set budgets, and build financial freedom.</p>
+        <div class="app-links">
+            <button>Download on App Store</button>
+            <button>Download on Google Play</button>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features">
+        <h2>Features Designed for Your Financial Goals</h2>
+        <div class="feature-box">
+            <h3>Track Spending</h3>
+            <p>Monitor daily expenses in over 50 categories.</p>
+        </div>
+        <div class="feature-box">
+            <h3>Budget Planner</h3>
+            <p>Set limits on categories to control spending.</p>
+        </div>
+        <div class="feature-box">
+            <h3>Expense Calculator</h3>
+            <p>Calculate your budget and savings easily.</p>
+        </div>
+        <div class="feature-box">
+            <h3>Insightful Analytics</h3>
+            <p>View spending patterns to make informed decisions.</p>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works">
+        <h2>How Ex Track Works</h2>
+        <div class="step">
+            <h3>Step 1: Set Up Accounts</h3>
+            <p>Connect your bank accounts or add transactions manually.</p>
+        </div>
+        <div class="step">
+            <h3>Step 2: Monitor Spending</h3>
+            <p>Keep track
+<!-- Budget Calculator Section -->
+<section id="budget-calculator">
+    <h2>Budget Calculator</h2>
+    <p>Estimate your monthly budget based on income and essential expenses.</p>
+    <div class="budget-calculator">
+        <input type="number" id="income" placeholder="Enter Monthly Income">
+        <input type="number" id="essentials" placeholder="Enter Essential Expenses">
+        <button onclick="calculateBudget()">Calculate Budget</button>
+        <p id="budget-result">Remaining Budget: $0</p>
+    </div>
+</section>
+
+<!-- Categories Section -->
+<section id="categories">
+    <h2>Expense Categories</h2>
+    <p>Select from 50 categories to manage your expenses better.</p>
+    <div class="categories-list">
+        <!-- Sample categories, add more as needed -->
+        <div class="category">Groceries</div>
+        <div class="category">Transportation</div>
+        <div class="category">Rent</div>
+        <div class="category">Entertainment</div>
+        <div class="category">Healthcare</div>
+        <div class="category">Utilities</div>
+        <!-- Add more categories up to 50 -->
+    </div>
+</section>
+<!-- Calculator Section -->
+<section id="calculator">
+    <h2>Simple Calculator</h2>
+    <div class="calculator-container">
+        <input type="text" id="calc-display" readonly placeholder="0">
+        <div class="calc-buttons">
+            <button class="calc-button">7</button>
+            <button class="calc-button">8</button>
+            <button class="calc-button">9</button>
+            <button class="calc-button">/</button>
+            <button class="calc-button">4</button>
+            <button class="calc-button">5</button>
+            <button class="calc-button">6</button>
+            <button class="calc-button">*</button>
+            <button class="calc-button">1</button>
+            <button class="calc-button">2</button>
+            <button class="calc-button">3</button>
+            <button class="calc-button">-</button>
+            <button class="calc-button">0</button>
+            <button class="calc-button">C</button>
+            <button class="calc-button">=</button>
+            <button class="calc-button">+</button>
+        </div>
+    </div>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<!-- Chart Section -->
+<section id="charts">
+    <h2>Expense Overview</h2>
+    
+    <!-- Bar Chart for Monthly Expenses -->
+    <div class="chart-container">
+        <h3>Monthly Expenses by Category</h3>
+        <canvas id="expenseBarChart"></canvas>
+    </div>
+
+    <!-- Pie Chart for Budget Allocation -->
+    <div class="chart-container">
+        <h3>Budget Allocation</h3>
+        <canvas id="budgetPieChart"></canvas>
+    </div>
+</section>
+<!-- Contact Email Button -->
+<div id="contactButton" onclick="showEmail()">Contact</div>
+
+<!-- Email Display Box -->
+<div id="emailDisplay">extrack04@gmail.com</div>
+<!-- Contact Button -->
+<div id="contactButton" onclick="showEmail()">Contact</div>
+<div id="emailDisplay">extrack04@gmail.com</div>
+
+<!-- Create Account Button -->
+<div id="createAccountButton" onclick="showCreateAccount()">Create Account</div>
+
+<!-- Create Account Form Modal -->
+<div id="createAccountModal">
+  <div id="accountForm">
+    <h2>Create Account</h2>
+    <form id="stepForm">
+      <!-- Steps will be dynamically created here -->
+      <div id="stepContent"></div>
+      <button type="button" id="nextButton" onclick="nextStep()">Next</button>
+    </form>
+    <button id="closeModal" onclick="closeModal()">Close</button>
+  </div>
+</div>
+<!-- Ex Track Heading -->
+<div id="exTrackContainer">
+  <h1 id="exTrackText">Ex Track</h1>
+  <img id="logo" src="https://turbologo.com/designs/66398335" alt="Ex Track Logo">
+</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ex Track - Expense Tracker</title>
+<style>
+    /* Main Background */
+    body {
+        background-color: #8ECAD6; /* Light Cyan */
+        color: #023047; /* Dark Teal for text */
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Header */
+    header {
+        background-color: #219EBC; /* Medium Blue */
+        padding: 20px;
+        text-align: center;
+    }
+
+    header h1 {
+        color: #FFB703; /* Bright Yellow for contrast */
+        font-size: 2em;
+    }
+
+    /* Container for main content */
+    .content {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #FFFFFF; /* White background for content */
+        border-radius: 8px;
+    }
+
+    /* Boxes for expenses */
+    .expense-box {
+        background-color: #FB8500; /* Bright Orange for boxes */
+        padding: 15px;
+        margin: 15px 0;
+        border-radius: 8px;
+        border: 2px solid #219EBC; /* Medium Blue border */
+    }
+
+    /* Buttons */
+    .button {
+        background-color: #FFB703; /* Bright Yellow */
+        color: #023047; /* Dark Teal for button text */
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1em;
+        margin-top: 10px;
+    }
+
+    /* Footer */
+    footer {
+        background-color: #023047; /* Dark Teal */
+        color: #FFFFFF; /* White text for footer */
+        text-align: center;
+        padding: 10px;
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Ex Track - Expense Tracker</h1>
+</header>
+
+<div class="content">
+    <h2>Monthly Overview</h2>
+    <div class="expense-box">
+        <h3>Rent</h3>
+        <p>Amount: $1000</p>
+    </div>
+    <div class="expense-box">
+        <h3>Groceries</h3>
+        <p>Amount: $300</p>
+    </div>
+    <button class="button">Add Expense</button>
+</div>
+
+<footer>
+    <p>Ex Track © 2024</p>
+</footer>
+
+</body>
+</html>
+<img src="https://img.freepik.com/premium-vector/businesswoman-is-doing-budget-planning-expense-tracking_249611-35373.jpg?w=826" alt="Businesswoman Planning Budget" class="budget-image" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ex Track - Expense Tracker</title>
+<style>
+    /* Main Background */
+    body {
+        background-color: #8ECAD6; /* Light Cyan */
+        color: #023047; /* Dark Teal for text */
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        position: relative; /* Allow absolute positioning of the image */
+    }
+
+    /* Header */
+    header {
+        background-color: #219EBC; /* Medium Blue */
+        padding: 20px;
+        text-align: center;
+    }
+
+    header h1 {
+        color: #FFB703; /* Bright Yellow for contrast */
+        font-size: 2em;
+    }
+
+    /* Container for main content */
+    .content {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #FFFFFF; /* White background for content */
+        border-radius: 8px;
+    }
+
+    /* Boxes for expenses */
+    .expense-box {
+        background-color: #FB8500; /* Bright Orange for boxes */
+        padding: 15px;
+        margin: 15px 0;
+        border-radius: 8px;
+        border: 2px solid #219EBC; /* Medium Blue border */
+    }
+
+    /* Buttons */
+    .button {
+        background-color: #FFB703; /* Bright Yellow */
+        color: #023047; /* Dark Teal for button text */
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1em;
+        margin-top: 10px;
+    }
+
+    /* Footer */
+    footer {
+        background-color: #023047; /* Dark Teal */
+        color: #FFFFFF; /* White text for footer */
+        text-align: center;
+        padding: 10px;
+    }
+
+    /* Image Styling */
+    .budget-image {
+        position: absolute; /* Position the image absolutely */
+        bottom: 20px; /* Adjust to position it at the bottom */
+        right: 20px; /* Adjust to position it on the right */
+        max-width: 200px; /* Set a maximum width to control size */
+        height: auto; /* Maintain aspect ratio */
+        z-index: -1; /* Send it to the back */
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Ex Track - Expense Tracker</h1>
+</header>
+
+<div class="content">
+    <h2>Monthly Overview</h2>
+    <div class="expense-box">
+        <h3>Rent</h3>
+        <p>Amount: $1000</p>
+    </div>
+    <div class="expense-box">
+        <h3>Groceries</h3>
+        <p>Amount: $300</p>
+    </div>
+    <button class="button">Add Expense</button>
+</div>
+
+<footer>
+    <p>Ex Track © 2024</p>
+</footer>
+
+<!-- Adding the image -->
+<img src="https://img.freepik.com/premium-vector/businesswoman-is-doing-budget-planning-expense-tracking_249611-35373.jpg?w=826" alt="Businesswoman Planning Budget" class="budget-image" />
+
+</body>
+</html>
+<!-- Footer Section -->
+<footer>
+  <p>© 2024 X Track. All rights reserved.</p>
+  <p>Privacy Policy | Terms of Service</p>
+  <p class="contact-email">Contact us: <a href="mailto:extrack04@gmail.com">extrack04@gmail.com</a></p>
+</footer>
